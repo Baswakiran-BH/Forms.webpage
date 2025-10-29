@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+    <a href="/" class="back-link">&larr; Back to Home</a>
+    <h2>Search Results</h2>
+    
+    <p>You searched for: <strong>{{ search_query }}</strong></p>
+    
+    <p>No results found. (This is just a demo).</p>
+    
+    <a href="/search_page" class="back-link" style="margin-top: 2rem;">&larr; Search Again</a>
+{% endblock %}

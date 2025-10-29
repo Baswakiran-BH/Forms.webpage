@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+    {% if username %}
+        <h1>Welcome, {{ username }}!</h1>
+        <p style="text-align: center;">You are logged in.</p>
+        <nav>
+            <ul>
+                <li><a href="/contact_page">Go to Contact Form</a></li>
+                <li><a href="/search_page">Go to Search Form</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    {% else %}
+        <h1>Welcome, Guest!</h1>
+        <p style="text-align: center;">Please log in or browse our forms.</p>
+        <nav>
+            <ul>
+                <li><a href="/login_page">Go to Login Form</a></li>
+                <li><a href="/contact_page">Go to Contact Form</a></li>
+                <li><a href="/search_page">Go to Search Form</a></li>
+            </ul>
+        </nav>
+    {% endif %}
+{% endblock %}

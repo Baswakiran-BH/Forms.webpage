@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Search{% endblock %}
+
+{% block content %}
+    <a href="/" class="back-link">&larr; Back to Home</a>
+    <h2>Search Site</h2>
+    
+    <form id="search-form" action="/submit_search" method="GET">
+        <div>
+            <label for="query">Search for:</label>
+            <input type="text" id="query" name="query">
+        </div>
+        <div>
+            <input type="submit" value="Search">
+        </div>
+    </form>
+{% endblock %}
