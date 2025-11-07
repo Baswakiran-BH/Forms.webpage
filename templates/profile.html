@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+  <a href="{{ url_for('forms_home') }}" class="back-link">&larr; Back to Forms</a>
+  <h2>Update Profile</h2>
+
+  <form action="{{ url_for('submit_profile') }}" method="POST">
+    <div>
+      <label for="full_name">Full Name</label>
+      <input type="text" id="full_name" name="full_name" placeholder="Your name" required>
+    </div>
+    <div>
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" name="phone" placeholder="+91-XXXXXXXXXX">
+    </div>
+    <div>
+      <label for="bio">Bio</label>
+      <textarea id="bio" name="bio" rows="4" placeholder="Say something about yourself"></textarea>
+    </div>
+    <div>
+      <input type="submit" value="Save Profile">
+    </div>
+  </form>
+{% endblock %}

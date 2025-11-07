@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Forms{% endblock %}
+
+{% block content %}
+  <a href="{{ url_for('index') }}" class="back-link">&larr; Back to Home</a>
+  <h2>Available Forms</h2>
+
+  <div class="card">
+    <p class="muted">Choose a form to continue:</p>
+    <ul>
+      <li><a href="{{ url_for('contact_page') }}">Contact Form</a></li>
+      <li><a href="{{ url_for('search_page') }}">Search Form</a></li>
+      <li><a href="{{ url_for('profile_page') }}">Profile Form</a></li>
+      <li><a href="{{ url_for('feedback_page') }}">Feedback Form</a></li>
+      <li><a href="{{ url_for('upload_page') }}">File Upload Form</a></li>
+    </ul>
+  </div>
+{% endblock %}

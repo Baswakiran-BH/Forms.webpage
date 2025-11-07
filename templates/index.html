@@ -5,14 +5,12 @@
   <h2>Welcome{% if username %}, {{ username }}{% endif %}!</h2>
 
   {% if username %}
-    <!-- User is logged in → Show forms -->
     <p>
-      <a href="{{ url_for('contact_page') }}">Contact Form</a> |
-      <a href="{{ url_for('search_page') }}">Search Page</a> |
-      <a href="{{ url_for('logout') }}">Logout</a>
+      <a href="{{ url_for('forms_home') }}" class="btn">Open Forms</a>
+      &nbsp; <a href="{{ url_for('logout') }}" class="btn btn--ghost">Logout</a>
     </p>
   {% else %}
-    <!-- User is NOT logged in → Show login only -->
     <p><a href="{{ url_for('login_page') }}" class="btn">Login to access forms</a></p>
   {% endif %}
 {% endblock %}
+
