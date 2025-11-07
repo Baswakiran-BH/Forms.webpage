@@ -1,26 +1,18 @@
 {% extends 'base.html' %}
-{% block title %}Homepage{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block content %}
-    {% if username %}
-        <h1>Welcome, {{ username }}!</h1>
-        <p style="text-align: center;">You are logged in.</p>
-        <nav>
-            <ul>
-                <li><a href="/contact_page">Go to Contact Form</a></li>
-                <li><a href="/search_page">Go to Search Form</a></li>
-                <li><a href="/logout">Logout</a></li>
-            </ul>
-        </nav>
-    {% else %}
-        <h1>Welcome, Guest!</h1>
-        <p style="text-align: center;">Please log in or browse our forms.</p>
-        <nav>
-            <ul>
-                <li><a href="/login_page">Go to Login Form</a></li>
-                <li><a href="/contact_page">Go to Contact Form</a></li>
-                <li><a href="/search_page">Go to Search Form</a></li>
-            </ul>
-        </nav>
-    {% endif %}
+  <h2>Welcome{% if username %}, {{ username }}{% endif %}!</h2>
+
+  {% if username %}
+    <!-- User is logged in → Show forms -->
+    <p>
+      <a href="{{ url_for('contact_page') }}">Contact Form</a> |
+      <a href="{{ url_for('search_page') }}">Search Page</a> |
+      <a href="{{ url_for('logout') }}">Logout</a>
+    </p>
+  {% else %}
+    <!-- User is NOT logged in → Show login only -->
+    <p><a href="{{ url_for('login_page') }}" class="btn">Login to access forms</a></p>
+  {% endif %}
 {% endblock %}
